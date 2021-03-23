@@ -1,15 +1,14 @@
 import React from "react";
 
 const WeatherDetails = (props) => {
-  let key = 0;
   let iconUrl =
     "http://openweathermap.org/img/wn/" +
-    props.item.list[key].weather[key].icon +
+    props.item.list[0].weather[0].icon +
     ".png";
-  let todayDay = props.item.list[key].dt_txt.substr(8, 2);
+  let todayDay = props.item.list[0].dt_txt.substr(8, 2);
   let IndexOfTomorrow = 0;
   for (let index = 0; index < props.item.list.length; index++) {
-    if (props.item.list[index].dt_txt.substr(8, 2) == parseInt(todayDay) + 1) {
+    if (props.item.list[index].dt_txt.substr(8, 2) == parseInt(todayDay) + 1 || (props.item.list[index].dt_txt.substr(8, 2) == 1 && todayDay != 1)) {
       break;
     }
     IndexOfTomorrow++;
