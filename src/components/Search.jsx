@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Weather from "./Weather";
+import WeatherDetails from "./WeatherDetails";
 
 const Search = () => {
   const userInput = useRef();
@@ -43,6 +44,7 @@ const Search = () => {
         </div>
         <div className="text-center mt-5">
           <Weather item={weatherItem}  />
+          <WeatherDetails item={weatherItem} />
         </div>
       </div>
     </React.Fragment>
